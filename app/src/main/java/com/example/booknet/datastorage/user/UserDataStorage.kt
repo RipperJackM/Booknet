@@ -7,6 +7,13 @@ import com.example.booknet.extensions.toMD5
 
 class UserDataStorage(private val appConfig: AppConfig) {
 
+    var isUserLogged: Boolean = false
+        get() = appConfig.getBoolean(Keys.IS_LOGGED, false)
+        set(value) {
+            appConfig.commitBoolean(Keys.IS_LOGGED, value)
+            field = value
+        }
+
     var appName: String = ""
         get() = field.ifEmpty {
             appConfig.getString(Keys.APP_NAME)

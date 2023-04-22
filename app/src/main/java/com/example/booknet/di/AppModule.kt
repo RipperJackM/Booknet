@@ -10,10 +10,12 @@ import com.example.booknet.network.ApiService
 import com.example.booknet.network.library.LibraryDataFetcher
 import com.example.booknet.repository.library.LibraryRepository
 import com.example.booknet.repository.library.LibraryRepositoryImpl
+import com.example.booknet.ui.flow.start.StartViewModel
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import org.koin.android.ext.koin.androidApplication
 import org.koin.android.ext.koin.androidContext
+import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 import java.util.concurrent.TimeUnit
 
@@ -64,4 +66,7 @@ val applicationModule = module {
 
     // Repositories
     single<LibraryRepository> { LibraryRepositoryImpl(get(), get(), get()) }
+
+    // View models
+    viewModel { StartViewModel(get(), get()) }
 }

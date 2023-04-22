@@ -1,10 +1,8 @@
 package com.example.booknet.mappers.library
 
 import com.example.booknet.apimodels.response.library.LibraryBookDto
-import com.example.booknet.models.library.GenresModel
 import com.example.booknet.models.library.LibraryBookModel
 import com.example.booknet.utils.Mapper
-import com.google.gson.annotations.SerializedName
 
 class LibraryBooksMapper(
     private val genresMapper: LibraryBooksGenresMapper
@@ -12,13 +10,13 @@ class LibraryBooksMapper(
     override fun mapToModel(entity: LibraryBookDto?) = LibraryBookModel(
         id = entity?.book?.id ?: -1,
         title = entity?.book?.title ?: "",
-        authorId = entity?.book?.authorId ?: -1,
+        authorId = entity?.book?.authorID ?: -1,
         authorName = entity?.book?.authorName ?: "",
-        authorAvatarUrl = entity?.book?.authorAvatarUrl ?: "",
-        coAuthor = entity?.book?.coAuthor ?: "",
+        authorAvatarUrl = entity?.book?.authorAvatarURL ?: "",
+        coAuthor = entity?.book?.coAuthor ?: false,
         coAuthorName = entity?.book?.coAuthorName ?: "",
-        coAuthorAvatarUrl = entity?.book?.coAuthorAvatarUrl ?: "",
-        pubId = entity?.book?.pubId ?: "",
+        coAuthorAvatarUrl = entity?.book?.coAuthorAvatarURL ?: "",
+        pubId = entity?.book?.pubID ?: -1,
         pubName = entity?.book?.pubName ?: "",
         type = entity?.book?.type ?: "",
         genres = genresMapper.mapToModel(entity?.book?.genres ?: listOf()),

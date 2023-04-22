@@ -2,6 +2,7 @@ package com.example.booknet.datastorage
 
 object Keys {
     // User
+    const val IS_LOGGED = "IS_LOGGED"
     const val APP_NAME = "APP_NAME"
     const val DEVICE_ID = "DEVICE_ID"
     const val TOKEN = "TOKEN"
