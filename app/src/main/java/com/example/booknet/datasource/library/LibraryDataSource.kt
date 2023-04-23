@@ -13,9 +13,7 @@ enum class LibraryType(val key: Int) {
 object LibraryDataSource {
 
     val libraryBooks = MutableLiveData<List<LibraryBookModel>?>()
-
-    fun getBooksByType(type: LibraryType): List<LibraryBookModel> {
-        return if (type == LibraryType.LIBRARY_TYPE_GENERAL) libraryBooks.value ?: listOf()
-        else libraryBooks.value?.filter { it.libraryType == type.key } ?: listOf()
-    }
+    val iReadBooks = MutableLiveData<List<LibraryBookModel>?>()
+    val favouriteBooks = MutableLiveData<List<LibraryBookModel>?>()
+    val archiveBooks = MutableLiveData<List<LibraryBookModel>?>()
 }

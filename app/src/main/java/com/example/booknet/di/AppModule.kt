@@ -4,12 +4,21 @@ import com.chuckerteam.chucker.api.ChuckerInterceptor
 import com.example.booknet.App
 import com.example.booknet.datastorage.AppConfig
 import com.example.booknet.datastorage.user.UserDataStorage
+import com.example.booknet.mappers.book.BookChapterMapper
 import com.example.booknet.mappers.library.LibraryBooksGenresMapper
 import com.example.booknet.mappers.library.LibraryBooksMapper
 import com.example.booknet.network.ApiService
+import com.example.booknet.network.book.BookDataFetcher
 import com.example.booknet.network.library.LibraryDataFetcher
+import com.example.booknet.repository.book.BookRepository
+import com.example.booknet.repository.book.BookRepositoryImpl
 import com.example.booknet.repository.library.LibraryRepository
 import com.example.booknet.repository.library.LibraryRepositoryImpl
+import com.example.booknet.ui.flow.home.archive.ArchiveViewModel
+import com.example.booknet.ui.flow.home.favorites.FavouritesViewModel
+import com.example.booknet.ui.flow.home.iread.IReadViewModel
+import com.example.booknet.ui.flow.home.library.LibraryViewModel
+import com.example.booknet.ui.flow.read.ReadViewModel
 import com.example.booknet.ui.flow.start.StartViewModel
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
@@ -56,6 +65,7 @@ val applicationModule = module {
 
     // Data fetchers
     single { LibraryDataFetcher(get()) }
+    single { BookDataFetcher(get()) }
 
     // Data storages
     single { UserDataStorage(get()) }
@@ -63,10 +73,17 @@ val applicationModule = module {
     // Mappers
     single { LibraryBooksGenresMapper() }
     single { LibraryBooksMapper(get()) }
+    single { BookChapterMapper() }
 
     // Repositories
     single<LibraryRepository> { LibraryRepositoryImpl(get(), get(), get()) }
+    single<BookRepository> { BookRepositoryImpl(get(), get(), get()) }
 
     // View models
     viewModel { StartViewModel(get(), get()) }
+    viewModel { LibraryViewModel() }
+    viewModel { IReadViewModel() }
+    viewModel { FavouritesViewModel() }
+    viewModel { ArchiveViewModel() }
+    viewModel { ReadViewModel(get()) }
 }

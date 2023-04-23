@@ -12,6 +12,7 @@ import androidx.navigation.ui.setupWithNavController
 import com.example.booknet.databinding.ActivityMainBinding
 import com.example.booknet.ui.base.BaseFragment
 import com.example.booknet.ui.base.BottomNavigationHandler
+import com.example.booknet.utils.Loader
 import org.w3c.dom.Text
 
 class MainActivity : AppCompatActivity() {
@@ -57,6 +58,9 @@ class MainActivity : AppCompatActivity() {
 
     private fun setupObservers() {
         BottomNavigationHandler.isVisible.observe(this) { binding.bottomNavigation.isVisible = it }
+        Loader.isLoading.observe(this) {
+                isLoading -> binding.llLoader.isVisible = isLoading
+        }
     }
 
     private fun getCurrentFragment(): Fragment? {

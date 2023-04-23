@@ -1,6 +1,7 @@
 package com.example.booknet.api
 
 import com.example.booknet.apimodels.response.ApiResponseError
+import com.example.booknet.apimodels.response.book.BookChapterResponse
 import com.example.booknet.apimodels.response.library.LibraryBooksResponse
 
 sealed class DataResult<out T : Any> {
@@ -11,3 +12,6 @@ sealed class DataResult<out T : Any> {
 
 // Library
 typealias ApiResponseGetLibraryBooks = (DataResult<LibraryBooksResponse>) -> Unit
+
+// Book
+typealias ApiResponseGetBookChapter = (DataResult<BookChapterResponse>) -> Unit

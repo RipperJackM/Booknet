@@ -6,7 +6,9 @@ import android.provider.Settings
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import com.example.booknet.datasource.library.LibraryDataSource
+import com.example.booknet.datasource.library.LibraryType
 import com.example.booknet.datastorage.user.UserDataStorage
+import com.example.booknet.models.library.LibraryBookModel
 import com.example.booknet.repository.library.BaseLibraryStatus
 import com.example.booknet.repository.library.LibraryRepository
 import com.example.booknet.utils.SingleLifeEvent
@@ -41,7 +43,7 @@ class StartViewModel(
         repository.getLibraryBooks { result ->
             val state = when (result) {
                 is BaseLibraryStatus.Success -> {
-                    LibraryDataSource.libraryBooks.postValue(result.libraryBooksList)
+                    sortBooks(result.libraryBooksList)
                     UiState.OnGetLibraryData
                 }
                 is BaseLibraryStatus.HttpError -> UiState.Failure(result.error)
@@ -49,5 +51,12 @@ class StartViewModel(
             }
             _uiState.postValue(state)
         }
+    }
+
+    private fun sortBooks(books: List<LibraryBookModel>?) {
+        LibraryDataSource.libraryBooks.postValue(books)
+        LibraryDataSource.iReadBooks.postValue(books?.filter { it.libraryType == LibraryType.LIBRARY_TYPE_READ.key })
+        LibraryDataSource.favouriteBooks.postValue(books?.filter { it.libraryType == LibraryType.LIBRARY_TYPE_FAVOURITE.key })
+        LibraryDataSource.archiveBooks.postValue(books?.filter { it.libraryType == LibraryType.LIBRARY_TYPE_ARCHIVE.key })
     }
 }

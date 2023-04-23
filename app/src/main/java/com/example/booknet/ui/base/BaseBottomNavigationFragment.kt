@@ -5,8 +5,8 @@ import android.view.View
 import androidx.navigation.fragment.findNavController
 import com.example.booknet.MainActivity
 import com.example.booknet.R
-import com.example.booknet.ui.flow.favorites.FavouritesFragment
-import com.example.booknet.ui.flow.library.LibraryFragment
+import com.example.booknet.ui.flow.home.favorites.FavouritesFragment
+import com.example.booknet.ui.flow.home.library.LibraryFragment
 
 open class BaseBottomNavigationFragment : BaseFragment() {
 

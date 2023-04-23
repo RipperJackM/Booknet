@@ -9,7 +9,6 @@ import androidx.navigation.fragment.findNavController
 import com.example.booknet.MainActivity
 
 open class BaseFragment : Fragment() {
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         BottomNavigationHandler.isNeedToShow(false)

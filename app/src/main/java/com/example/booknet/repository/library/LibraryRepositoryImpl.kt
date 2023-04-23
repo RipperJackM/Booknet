@@ -5,10 +5,6 @@ import com.example.booknet.datastorage.user.UserDataStorage
 import com.example.booknet.mappers.library.LibraryBooksMapper
 import com.example.booknet.network.library.LibraryDataFetcher
 
-
-typealias EmptyLibraryCallback = (status: EmptyLibraryStatus) -> Unit
-typealias GetLibraryBooksCallback = (status: BaseLibraryStatus) -> Unit
-
 class LibraryRepositoryImpl(
     private val fetcher: LibraryDataFetcher,
     private val libraryMapper: LibraryBooksMapper,
