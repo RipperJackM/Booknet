@@ -42,19 +42,46 @@
     <fragment
         android:id="@+id/nav_i_read"
         android:name="com.example.booknet.ui.flow.home.iread.IReadFragment"
-        tools:layout="@layout/fragment_i_read" />
+        tools:layout="@layout/fragment_i_read">
+
+        <action
+            android:id="@+id/navigate_to_read"
+            app:destination="@id/nav_read"
+            app:enterAnim="@anim/slide_from_right"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/slide_from_left"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
 
     <!-- FavouritesFragment -->
     <fragment
         android:id="@+id/nav_favourites"
         android:name="com.example.booknet.ui.flow.home.favorites.FavouritesFragment"
-        tools:layout="@layout/fragment_favourites" />
+        tools:layout="@layout/fragment_favourites">
+
+        <action
+            android:id="@+id/navigate_to_read"
+            app:destination="@id/nav_read"
+            app:enterAnim="@anim/slide_from_right"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/slide_from_left"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
 
     <!-- LibraryFragment -->
     <fragment
         android:id="@+id/nav_archive"
         android:name="com.example.booknet.ui.flow.home.archive.ArchiveFragment"
-        tools:layout="@layout/fragment_archive" />
+        tools:layout="@layout/fragment_archive">
+
+        <action
+            android:id="@+id/navigate_to_read"
+            app:destination="@id/nav_read"
+            app:enterAnim="@anim/slide_from_right"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/slide_from_left"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
 
 
     <!-- ReadFragment -->

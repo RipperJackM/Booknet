@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.booknet.databinding.FragmentFavouritesBinding
 import com.example.booknet.ui.base.BaseBottomNavigationFragment
+import com.example.booknet.ui.flow.home.library.LibraryFragmentDirections
 import com.example.booknet.ui.flow.home.router.HomeRouter
 import com.example.booknet.ui.flow.home.router.HomeRouterAction
 import com.example.booknet.ui.flow.home.router.HomeRouterListener
@@ -36,7 +37,8 @@ class FavouritesFragment : BaseBottomNavigationFragment(), HomeRouterListener {
 
     override fun navigate(action: HomeRouterAction) {
         when (action) {
-            is HomeRouterAction.ShowReadFragment -> return
+            is HomeRouterAction.ShowReadFragment ->
+                navigate(FavouritesFragmentDirections.navigateToRead(action.book.id.toString()))
         }
     }
 
