@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Base -->
+    <dimen name="base_container_space">20dp</dimen>
+
+    <dimen name="small_margin">4dp</dimen>
+    <dimen name="medium_margin">8dp</dimen>
+    <dimen name="large_margin">12dp</dimen>
+    <dimen name="largest_margin">16dp</dimen>
+
+    <!-- Icon -->
+    <dimen name="icon_size_medium">24dp</dimen>
+
+    <!-- MainActivity -->
+    <dimen name="bottom_navigation_height">56dp</dimen>
+
+</resources>

@@ -40,7 +40,7 @@ class StartFragment : BaseFragment(), KoinComponent {
         viewModel.uiState.observe(viewLifecycleOwner) { state ->
             when (state) {
                 is StartViewModel.UiState.OnGetUserCredentials -> viewModel.getLibraryData()
-                is StartViewModel.UiState.OnGetLibraryData -> return@observe
+                is StartViewModel.UiState.OnGetLibraryData -> navigate(StartFragmentDirections.navigateToLibrary())
                 is StartViewModel.UiState.Failure -> onFailure(state.error)
             }
         }
@@ -49,5 +49,6 @@ class StartFragment : BaseFragment(), KoinComponent {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+        viewModel.uiState.removeObservers(viewLifecycleOwner)
     }
 }

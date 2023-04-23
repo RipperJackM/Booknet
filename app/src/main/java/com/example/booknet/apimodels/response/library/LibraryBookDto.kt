@@ -108,5 +108,5 @@ data class LibInfoDto(
     val addDate: Long?,
     @SerializedName("last_chr_count")
     val lastChrCount: Long?,
-    val type: Long?
+    val type: Int?
 )

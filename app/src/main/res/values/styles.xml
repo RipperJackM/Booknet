@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Text.Base" parent="TextAppearance.AppCompat">
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="Text.Base.Header">
+        <item name="android:textSize">20sp</item>
+        <item name="android:lineSpacingExtra">4sp</item>
+        <item name="android:textColor">@color/text_description</item>
+    </style>
+
+    <style name="Text.Base.Normal">
+        <item name="android:textSize">16sp</item>
+        <item name="android:lineSpacingExtra">4sp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="Text.Base.Description">
+        <item name="android:textSize">14sp</item>
+        <item name="android:lineSpacingExtra">4sp</item>
+        <item name="android:textColor">@color/text_description</item>
+    </style>
+</resources>

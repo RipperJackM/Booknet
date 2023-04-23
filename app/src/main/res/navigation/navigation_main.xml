@@ -9,6 +9,41 @@
     <fragment
         android:id="@+id/start"
         android:name="com.example.booknet.ui.flow.start.StartFragment"
-        tools:layout="@layout/fragment_start" />
+        tools:layout="@layout/fragment_start">
 
+        <action
+            android:id="@+id/navigate_to_library"
+            app:destination="@id/nav_library"
+            app:enterAnim="@anim/slide_from_bottom"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:launchSingleTop="true"
+            app:popEnterAnim="@anim/slide_from_left"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@id/start"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <!-- LibraryFragment -->
+    <fragment
+        android:id="@+id/nav_library"
+        android:name="com.example.booknet.ui.flow.library.LibraryFragment"
+        tools:layout="@layout/fragment_library" />
+
+    <!-- IReadFragment -->
+    <fragment
+        android:id="@+id/nav_i_read"
+        android:name="com.example.booknet.ui.flow.iread.IReadFragment"
+        tools:layout="@layout/fragment_i_read" />
+
+    <!-- FavouritesFragment -->
+    <fragment
+        android:id="@+id/nav_favourites"
+        android:name="com.example.booknet.ui.flow.favorites.FavouritesFragment"
+        tools:layout="@layout/fragment_favourites" />
+
+    <!-- LibraryFragment -->
+    <fragment
+        android:id="@+id/nav_archive"
+        android:name="com.example.booknet.ui.flow.archive.ArchiveFragment"
+        tools:layout="@layout/fragment_archive" />
 </navigation>

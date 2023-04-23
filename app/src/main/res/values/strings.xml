@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">Booknet</string>
+
+    <!-- ViewEmptyContent -->
+    <string name="view_empty_content_library_title">Наразі в бібліотеці немає книг</string>
+    <string name="view_empty_content_i_read_title">Ви ще нічого не читаєте</string>
+    <string name="view_empty_content_favourites_title">Ви ще не обрали улюблені книги</string>
+    <string name="view_empty_content_archive_title">В архіві поки немає книг</string>
+
+    <string name="view_empty_content_button_title">Перейти до бібліотеки</string>
+
+    <!-- MenuHome -->
+    <string name="menu_home_tab_library">Бібліотека</string>
+    <string name="menu_home_tab_read">Читаю</string>
+    <string name="menu_home_tab_favourite">Обрані</string>
+    <string name="menu_home_tab_archive">Архів</string>
 </resources>
